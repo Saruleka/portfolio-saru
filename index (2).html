@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saruleka P - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #eef2f3, #8e9eab);
+      color: #333;
+      scroll-behavior: smooth;
+      height: 100%;
+    }
+
+    header {
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: slideIn 1.5s ease;
+    }
+
+    nav {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      min-height: 2rem;
+      color: whitesmoke;
+    }
+
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid whitesmoke;
+      margin: 1rem auto;
+      display: block;
+    }
+
+    main {
+      padding: 4rem 8vw;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      animation: fadeIn 1s ease-in;
+    }
+
+    section {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-10px);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #1e3c72;
+    }
+
+    .skills, .cert-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .skills li, .cert-list li {
+      list-style: none;
+      background: #1e3c72;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+    }
+
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: #f4f4f4;
+      padding: 1rem;
+      border-left: 5px solid #2a5298;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .project-card a {
+      color: #2a5298;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+
+    .project-card a:hover {
+      color: #ff9800;
+    }
+
+    .resume-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #2a5298;
+      color: #eef2f3;
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .resume-button:hover {
+      background-color: #2a5298;
+    }
+
+    footer {
+      background: #1e3c72;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Saruleka P</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <img src="profile.jpg" alt="Profile Picture" class="profile-pic" />
+    <div class="hero">
+      <h1>Hi, I'm <span>Saruleka</span></h1>
+      <p><span id="typing-text"></span></p>
+    </div>
+   
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I’m Saruleka P, a Pre-final-year IT student at SSN College of Engineering with a strong interest in full-stack development and AI. I build scalable, real-world applications using Flask, Python, and modern web technologies.
+From smart attendance systems to AI-based plant disease detection, I enjoy creating solutions that combine innovation with impact. I'm passionate about learning, building, and contributing to tech teams solving meaningful problems.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skills">
+        <li>Python</li><li>Flask</li><li>Java (Beginner)</li><li>MySQL</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>DBMS</li><li>OOP</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects-container">
+        <div class="project-card">
+          <h3>Smart Attendance System</h3>
+          <p>Login-based attendance app using Flask with daily stats, SQLite DB, and MVC pattern. Deployed on Render.</p>
+          <a href="https://smart-attendance-9q0j.onrender.com/" target="_blank">Live Project</a>
+          <a href="https://github.com/Saruleka/smart-attendance-system" target="_blank">GitHub</a>
+        </div>
+        <div class="project-card">
+          <h3>Bridge Card Game</h3>
+          <p>Multiplayer Bridge game with Flask + JS, includes bidding, play phase, and final scoring. Team project.</p>
+          <a href="https://github.com/Saruleka/Bridge-Card-Game" target="_blank">GitHub</a>
+        </div>
+        <div class="project-card">
+          <h3>Payroll Management System</h3>
+          <p>Admin interface for payroll generation. Uses Strategy and State design patterns with Flask + SQLite.</p>
+          <a href="https://github.com/Saruleka/Payroll-system" target="_blank">GitHub</a>
+        </div>
+        <div class="project-card">
+          <h3>Plant Leaf Disease Detection</h3>
+          <p>AI-powered plant health predictor using MobileNetV2 + Flask, gives tips & climate alerts (ongoing).</p>
+          <a href="https://github.com/Saruleka/plant-disease-detector" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul class="cert-list">
+        <li>HackerRank Skill Certificate - Python</li>
+        <li>Full Stack Workshop - SSN Coding Club</li>
+        <li>CodSoft Internship - Backend Developer</li>
+        <li>NPTEL Course - Programming In Java</li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <p><strong>B.Tech in Information Technology</strong></p>
+      <p>SSN College of Engineering, Chennai</p>
+      <p>2023 – 2027</p>
+      <p>CGPA: 8.506 (as of 6th Semester)</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>📧 <a href="mailto:sarulekaprakasam@gmail.com">sarulekaprakasam@gmail.com</a></p>
+      <p>📱 +91 81227 86469</p>
+      <p>🌐 <a href="https://github.com/Saruleka" target="_blank">github.com/Saruleka</a></p>
+      <p>💼 <a href="https://linkedin.com/in/saruleka-p" target="_blank">linkedin.com/Saruleka</a></p>
+
+      <p>📄 <a href="resume.pdf" target="_blank" class="resume-button">Download Resume</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with passion by Saruleka P © 2025</p>
+  </footer>
+
+  <script>
+    const messages = [
+      "Full Stack Developer",
+      "Problem Solver",
+      "Pre-Final Year IT Student at SSN"
+    ];
+    let i = 0, j = 0, isDeleting = false, current = "", typingText = document.getElementById("typing-text");
+    function type() {
+      if (i < messages.length) {
+        if (!isDeleting && j <= messages[i].length) {
+          current = messages[i].substring(0, j++);
+        } else if (isDeleting && j >= 0) {
+          current = messages[i].substring(0, j--);
+        }
+        typingText.textContent = current;
+        if (j === messages[i].length) isDeleting = true;
+        if (j === 0 && isDeleting) {
+          isDeleting = false;
+          i = (i + 1) % messages.length;
+        }
+      }
+      setTimeout(type, isDeleting ? 50 : 100);
+    }
+    type();
+  </script>
+</body>
+</html>
